@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "00989309-6012-44ce-91b7-c13b126a2db5",
+		"name": "Vegans Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19357774",
+		"_collection_link": "https://aru-jedi-team.postman.co/workspace/ESCC~52dc6125-6369-4130-a258-13830b7509d0/collection/19357774-00989309-6012-44ce-91b7-c13b126a2db5?action=share&creator=19357774&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Exceptions",
+			"item": [
+				{
+					"name": "Test 1 - maximumWeight over maximum admittable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 200,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 150.00,\n            \"price\": 150.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 2 - number of items over the limit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 100,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 90.72,\n            \"price\": 13\n        },\n        {\n            \"id\": 2,\n            \"weight\": 33.80,\n            \"price\": 40\n        },\n        {\n            \"id\": 3,\n            \"weight\": 43.15,\n            \"price\": 10\n        },\n        {\n            \"id\": 4,\n            \"weight\": 37.97,\n            \"price\": 16\n        },\n        {\n            \"id\": 5,\n            \"weight\": 46.81,\n            \"price\": 36\n        },\n        {\n            \"id\": 6,\n            \"weight\": 48.77,\n            \"price\": 79\n        },\n        {\n            \"id\": 7,\n            \"weight\": 81.80,\n            \"price\": 45\n        },\n        {\n            \"id\": 8,\n            \"weight\": 19.36,\n            \"price\": 79\n        },\n        {\n            \"id\": 9,\n            \"weight\": 6.76,\n            \"price\": 64\n        },\n        {\n            \"id\": 10,\n            \"weight\": 6.76,\n            \"price\": 64\n        },\n        {\n            \"id\": 11,\n            \"weight\": 6.76,\n            \"price\": 64\n        },\n        {\n            \"id\": 12,\n            \"weight\": 6.76,\n            \"price\": 64\n        },\n        {\n            \"id\": 13,\n            \"weight\": 12.12,\n            \"price\": 64\n        },\n        {\n            \"id\": 14,\n            \"weight\": 6.13,\n            \"price\": 12\n        },\n        {\n            \"id\": 15,\n            \"weight\": 0.76,\n            \"price\": 6\n        },\n        {\n            \"id\": 16,\n            \"weight\": 5.76,\n            \"price\": 54\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 3 - all items exceed the maximum weight admittable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 100,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 150.00,\n            \"price\": 150.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 4 - all items exceed the maximum price admittable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 100,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 100.00,\n            \"price\": 150.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 5 - one items exceed the maximum weight admittable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 100,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 150.00,\n            \"price\": 100.00\n        },\n        {\n            \"id\": 2,\n            \"weight\": 100.00,\n            \"price\": 100.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 6 - one items exceed the maximum price admittable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 100,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 100.00,\n            \"price\": 150.00\n        },\n        {\n            \"id\": 2,\n            \"weight\": 100.00,\n            \"price\": 100.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Use cases",
+			"item": [
+				{
+					"name": "UC1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 75,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 85.31,\n            \"price\": 29.00\n        },\n        {\n            \"id\": 2,\n            \"weight\": 14.55,\n            \"price\": 74\n        },\n        {\n            \"id\": 3,\n            \"weight\": 3.98,\n            \"price\": 16\n        },\n        {\n            \"id\": 4,\n            \"weight\": 26.24,\n            \"price\": 55\n        },\n        {\n            \"id\": 5,\n            \"weight\": 63.69,\n            \"price\": 52\n        },\n        {\n            \"id\": 6,\n            \"weight\": 76.25,\n            \"price\": 75\n        },\n        {\n            \"id\": 7,\n            \"weight\": 60.02,\n            \"price\": 74\n        },\n        {\n            \"id\": 8,\n            \"weight\": 93.18,\n            \"price\": 35\n        },\n        {\n            \"id\": 9,\n            \"weight\": 89.95,\n            \"price\": 78\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UC2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 80,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 53.38,\n            \"price\": 45\n        },\n        {\n            \"id\": 2,\n            \"weight\": 88.62,\n            \"price\": 98\n        },\n        {\n            \"id\": 3,\n            \"weight\": 78.48,\n            \"price\": 3\n        },\n        {\n            \"id\": 4,\n            \"weight\": 72.30,\n            \"price\": 76\n        },\n        {\n            \"id\": 5,\n            \"weight\": 30.18,\n            \"price\": 9\n        },\n        {\n            \"id\": 6,\n            \"weight\": 46.34,\n            \"price\": 48\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UC3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 8,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 15.30,\n            \"price\": 34\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UC4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maximumWeight\": 56,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"weight\": 90.72,\n            \"price\": 13\n        },\n        {\n            \"id\": 2,\n            \"weight\": 33.80,\n            \"price\": 40\n        },\n        {\n            \"id\": 3,\n            \"weight\": 43.15,\n            \"price\": 10\n        },\n        {\n            \"id\": 4,\n            \"weight\": 37.97,\n            \"price\": 16\n        },\n        {\n            \"id\": 5,\n            \"weight\": 46.81,\n            \"price\": 36\n        },\n        {\n            \"id\": 6,\n            \"weight\": 48.77,\n            \"price\": 79\n        },\n        {\n            \"id\": 7,\n            \"weight\": 81.80,\n            \"price\": 45\n        },\n        {\n            \"id\": 8,\n            \"weight\": 19.36,\n            \"price\": 79\n        },\n        {\n            \"id\": 9,\n            \"weight\": 6.76,\n            \"price\": 64\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/package-manager/calculate-most-valuable",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"package-manager",
+								"calculate-most-valuable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

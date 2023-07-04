@@ -1,0 +1,24 @@
+<Configuration monitorInterval="30" status="WARN">
+	<Properties>
+		<Property name="APPLICATION_NAME" value="escc" />
+		<!--Property name="LOG_PATTERN">%d{'['yyyy-MM-dd' 'HH:mm:ss.SSS']'} [%-6p]   %c{1}  -  %m%n</Property-->
+		<Property name="LOG_PATTERN">%style{%d{'['yyyy-MM-dd' 'HH:mm:ss.SSS']'}}{white,bold} [%style{%t}{magenta}] %style{%C{1.}}{bright,yellow}: [%style{%c.java}{cyan}]%n %highlight{%-5level }{bold}  -  %m%n</Property>
+	</Properties>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+		<Rewrite name="REWRITE">
+			<AppenderRef ref="ConsoleAppender" />
+		</Rewrite>
+	</Appenders>
+	<Loggers>
+		<Logger additivity="false" level="debug" name="it.mbc">
+			<AppenderRef ref="REWRITE" />
+
+		</Logger>
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender" />
+		</Root>
+	</Loggers>
+</Configuration>
